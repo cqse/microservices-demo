@@ -50,7 +50,10 @@ public class WebAccountsService {
 	}
 
 	public Account findByNumber(String accountNumber) {
-		return null;
+
+		logger.info("findByNumber() invoked: for " + accountNumber);
+		return restTemplate.getForObject(serviceUrl + "/accounts/{number}",
+				Account.class, accountNumber);
 	}
 
 	public List<Account> byOwnerContains(String name) {
