@@ -49,11 +49,7 @@ public class WebAccountsController {
 	public String byNumber(Model model,
 			@PathVariable("accountNumber") String accountNumber) {
 
-		logger.info("web-service byNumber() invoked: " + accountNumber);
 
-		Account account = accountsService.findByNumber(accountNumber);
-		logger.info("web-service byNumber() found: " + account);
-		model.addAttribute("account", account);
 		return "account";
 	}
 

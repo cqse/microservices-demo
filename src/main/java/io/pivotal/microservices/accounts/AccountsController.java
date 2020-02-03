@@ -48,15 +48,7 @@ public class AccountsController {
 	@RequestMapping("/accounts/{accountNumber}")
 	public Account byNumber(@PathVariable("accountNumber") String accountNumber) {
 
-		logger.info("accounts-service byNumber() invoked: " + accountNumber);
-		Account account = accountRepository.findByNumber(accountNumber);
-		logger.info("accounts-service byNumber() found: " + account);
-
-		if (account == null)
-			throw new AccountNotFoundException(accountNumber);
-		else {
-			return account;
-		}
+		return null;
 	}
 
 	/**
